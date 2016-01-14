@@ -1,0 +1,23 @@
+<ion-view view-title="CreateChannel">
+
+<form ng-submit="channelsCtrl.createChannel()">
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">Name</span>
+          <input required type="text" ng-model="channelsCtrl.newChannel.name">
+        </label>  
+        <label class="item item-input">
+          <span class="input-label">Count</span>
+          <input required type="text" ng-model="channelsCtrl.newChannel.count">
+        </label>     
+        <label class="item item-input">
+          <span class="input-label">Icon</span>
+          <input required type="text" ng-model="channelsCtrl.newChannel.iconClass">
+        </label>             
+        <label class="item">
+          <button class="button button-block button-positive" type="submit">Create Channel</button>
+        </label>
+      </div>
+</form>
+  </ion-content>
+</ion-view>

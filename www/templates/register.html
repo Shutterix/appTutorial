@@ -1,0 +1,22 @@
+<ion-view view-title="Registeren">
+  <ion-content>
+    <div ng-show="authCtrl.error">
+        <span>{{ authCtrl.error.message }}</span>
+    </div>
+    <form ng-submit="authCtrl.register()">
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">Email</span>
+          <input type="text" ng-model="authCtrl.user.email">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Password</span>
+          <input type="password" ng-model="authCtrl.user.password">
+        </label>
+        <label class="item">
+          <button class="button button-block button-positive" type="submit">Registeren</button>
+        </label>
+      </div>
+    </form>
+  </ion-content>
+</ion-view>

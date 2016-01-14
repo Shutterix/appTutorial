@@ -1,0 +1,25 @@
+<ion-view view-title="{{ messagesCtrl.channelName }} {{messagesCtrl.channelMessageCount > 0 ? '('+messagesCtrl.channelMessageCount+')' : ''}}">
+  <ion-content>
+<div class="list">
+    <a class="item item-avatar item-text-wrap" ng-repeat="message in messagesCtrl.messages">
+      <img ng-src="{{ messagesCtrl.getGravatar(message.uid) }}">
+      <h2>{{ messagesCtrl.getDisplayName(message.uid) }} <span class="timestamp">{{ message.timestamp | date:'dd-MM-yyyy HH:mm' }}</span></h2>
+      <p>{{ message.body }}</p>
+    </a>
+</div>
+<form ng-submit="messagesCtrl.sendMessage()">
+<div class="list">
+
+  <div class="item item-input-inset">
+    <label class="item-input-wrapper">
+      <input required type="text" style="width: 100%;" placeholder="Type a message..." ng-model="messagesCtrl.message">
+    </label>
+    <button class="button button-small button-positive">
+      Send
+    </button>
+  </div>
+
+</div>    
+</form>
+  </ion-content>
+</ion-view>
